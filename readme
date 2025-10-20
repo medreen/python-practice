@@ -1,0 +1,173 @@
+Python is a general purpose language that has gained recognition over the years due to it's ease of use.
+It is user-friendly as it is a high level programming language.
+
+Fields in which it is used
+-data science
+-machine learning
+-IoT
+-web development
+-scripting and automation
+-embedded systems
+
+Numpy and Pandas are libraries that are used bt data scientists to make data analysis less tedios
+Tensorflow and Scikit make machine learning and working with AI models much more accessble
+
+In web development, Python frameworks like Django, FastAPI, Flask let developers build scalable and secure backend systems.
+Social media platforms like instagram and pinterest use python on the backend
+
+Python also works well with microcomputers such as Raspberry PI so you can build all kinds of IoT projects i.e smart home devices
+
+Automation is one of python's biggest strengths.
+-u can write simple script that helps u with repetitive tasks such as fetching data from a database/spreadsheets, sending emails...
+
+To use python u must install it on your local machine
+=> simply by downloading the pkg file/ exe on windows from the browser.
+=> on windows check the add python to path option
+=> to verify the installation, open the terminal and run python --version
+
+\*_A terminal - is a text-based interface that lets u interact with your computer by typing commands._
+
+Since, every programming langauge has a way of outputing data to the terminal by use of a function, method or a keyword.
+Python uses the print() function.
+
+=> there are 4 other arguments you can pass to the print function.
+SYNTAX : print(\*objects, sep=' ', end='\n', file=sys.stdout, flush = False)
+
+- objects - the data you want to print; (_) means that u can print multiple thins to the terminal by passing in multiple objects.
+  sep=' ' - the sep btn objects. (this defaults to a single space character).
+  end ='\n' -what to print at the end of the object. (a new line character).
+  file=sys.stdout - determines where to send the output \*\*it could be a file_ but the terminal is the default.
+  flush=False - determines whether to show the output right away.
+-
+
+print('Footballers', 'Ronaldo', 'Messi', 'Hazard', 'Kante', 'Okocha')
+
+# Output: Footballers: Ronaldo Messi Hazard Kante Okocha \*_has no comma or separator_
+
+print('Footballers', 'Ronaldo', 'Messi', 'Hazard', 'Kante', 'Okocha' sep=', ')
+
+# Output: Footballers:, Ronaldo, Messi, Hazard, Kante, Okocha \*_is separated by a (,) comma and a space_
+
+However it makes no sense to have comma after footballer so u can use string concatenation.
+i.e print('Footballers: ' + 'Ronaldo' ....)
+---> by doing this u are combining multiple strings into one.
+
+the end parameter allows you to modify the ending output.
+-> by default the end character is a new line character which is helpful in some cases i.e
+**print('Footballers:')
+print('Ronaldo')
+print('Messi')
+print('Hazard')
+print('Kante')
+print('Okocha')**
+
+instead of that we can say
+print('Footballers: end' ')
+print('Ronaldo', end=', ')
+print('Messi', end=', ')
+print('Hazard', end=', ')
+print('Kante', end=', ')
+print('Okocha', end='.')
+
+# Output: Footballers: Ronaldo, Messi, Hazard, Kante, Okocha
+
+for the file argument, we can write the output of the print function in a separate file
+
+i.e wit open ('outpu.txt', 'w') as f:
+print('Hello world!', file=f)
+
+
+Data Types
+Python is a dynamically-typed language like JavaScript meaning you don't have to declare types for the variables.
+**makes coding really fast but it can lead to unexpected bugs because type errors are detected only when a program runs.
+
+1. Intergers - whole numbers
+2. Floats - decimal points
+3. Strings - characters enclosed by quotations (double or single)
+4. Booleans - A True or False type.
+5. Set - an ordered collection. {3, 4, 6}
+6. List - an ordered collection that supports different data types.
+7. Dictionary - collection of key value **pairs* enclosed in brackets.
+8. Tuple - an immutable ordered collection enclosed by brackets().
+9. Range - a sequence of numbers often used in loops.
+10. None - special value that represents absence of value
+
+
+===> to get the type of a value/ data use the type() keyword.
+or isinstance() function ->> it takes an object and the type you want to check it against.
+\\then returns a boolean.
+
+STRINGS
+===> a string is a sequence of characters surrounded by either a single or double quotation marks.
+
+for a multi-line string you can use triple double or single quotes.
+**if ur string has either double or single quote use the opposite string to wrap the object.
+or u could escape the single and double quote using a (\) backslash.
+
+**you can only concatenate a string and not a string and a number otherwise u get a type error.*
+--> this happens because python doesn't automatically convert the type
+however, u can use the string function to convert a number to a string.
+
+Apart from regular strings, python also has a category called f-strings that are similar to interpolation in JavaScript.
+**they start with f and allow u to embed variables or expressions inside replacement fields indicated by curly braces.
+
+Indexing
+--> to get the length of a string we use the len()function
+so the index is zero-based meaning they begin from zero going on.
+Each character of a string has a position called an index.
+
+**to access the character by it's index we use square brackets([index])
+
+--<negative indexing is also allowed to get the last character.>
+ 
+ ## String slicing
+ to extract characters from a certain index to another.
+ string[start:stop]
+
+u can also add the step to specify the increment btn each index in the slice.
+
+
+COMMON BUILT IN METHODS
+-->upper()
+**returns a new string with all characters converted to uppercase.
+
+-->lower()
+**returns a new string with all characters converted to lowerrcase.
+
+-->strip()
+returns the string with the specified leading trails removed / if none it removes whitespace.
+
+--> replace(old, new)
+returns a new string with all old occurrences replaced by new.
+
+--> split(separator)
+**splits a string on a given separator and if no separator is given it splits on whitespace.
+
+--> join(iterable)
+*joins items of an iterablr into a sting with a separator.
+
+--> startswith(preefix)
+**returns a boolean indicating if a string starts with the specified prefix
+
+--> endswith(prefix)
+*opposite of startswith
+
+--> find(substring)
+*returns the index of the first occurrence of the substring
+
+--> count(substring)
+*returns the number of times the substring appears in a string.
+
+--> capitalize()
+*replaces the first char to uppercase
+
+--> title()
+*replaces the first char of every substring to uppercase.
+
+--> isupper() and islower()
+*checks if the char in the string are lowercase or uppercase and returns a boolean
+
+
+## INTERGERS AND FLOATING POINT NUMBERS
+=> Both are numeric date types in Python.
+Therefore, u can store numeric data and perfom mathematical operations.
