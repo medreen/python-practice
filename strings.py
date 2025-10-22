@@ -75,6 +75,8 @@ print(strip_str)
 print('Stripped version: ' + strip_str.strip())
 print(strip_str.replace('jason', 'Jay'))
 print(strip_str.split(' '))
+print(strip_str.lstrip(' '))
+
 
 print(string_2.endswith('York'))
 print(string_2.startswith('New'))
@@ -82,10 +84,11 @@ print(string_2.startswith('New'))
 print(string_2.find('Hello'))
 print(strip_str.find('derulo')) #index of the first occurrence
 
+
 #checks the number of times the substring has been repeated
 sub_stc = "I am a girl, a good girl"
 print(sub_stc.count("girl"))
-
+print(sub_stc.rfind("girl"))
 
 #capitalize, title
 name = 'kennedy hakulieolo'
