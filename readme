@@ -253,16 +253,79 @@ var += 'New York' #'hello New York'
 
 
 FUNCTIONS
+--> a function is lines of code that are reusable when u call them.
 --> to define a function we use the def keyword followed by the name of the function.
 python is very keen on indentation.
 
-def user_age()
+1.use def to define your function and brackets() followed by a colon(:)
+2.then the function body follows on the next line.
+3.always add an indentation in the function body --> this is a code block in Python.
+4.in Python code blocks are defined by leaving an indentation of 4 spaces.
+
+**parameters ---> are placed inside the brackets. 
+to use parameters u need to pass arguments when u call the function.
+if arguments are not passed python will raise a type error
+
+def user_age():
  age = input('How old are you?')
  print(f'I am {age} years old!')
 
 user_age()  
 
 **they also have a return keyword that helps exit the function
+
+DECORATORS
+a function inside a function.
+
+
+SCOPE 
+determines the point at which you access a variable.
+ 
+Python uses LEGB rules to define scope
+local scope => variables defined in functions or classes
+enclosing scope => variables defined in enclosing or nested functions
+global scope => variables defined at the top level of the module file.
+built-in scope => reserved names for predefined functions, modules, keywords, objects.
+
+LOCAL SCOPE 
+variables defined inside a function or class can only be accessed inside the function or class
+
+hence, the variables cannot be printed unless you call the function.
+
+ENCLOSING SCOPE
+for a function that is nested inside another function, the variables of the parent function can be accessed by the child function.
+
+#however the parent function can't access the variables inside the child function.
+
+POSSIBLE SOLUTION
+declare res variable and assign it an empty string
+using the nonlocal keyword, make res a non local variable
+assign it a value in the child function
+
+Global scope
+For global scope, declare the variable at the very top of the module or use the global keyword
+this variable will be accessible all through your code
+
+CONDITIONAL STATEMENTS & LOGICAL OPERATORS.
+conditionals =>
+comparison  operator ---> let you compare two or more variables and return a boolean value.
+bool is a data type in python that only returns true or false.
+
+the most basic conditional statements are if statements
+--> use the if keyword, then the comparison statement followed by a full colon
+
+we use the else keyword to provide an alternative when the condition is not met
+
+to have multiple alternative statements we use elif.
+
+Truthy and Falsy values.
+in situations where u need to compare multiple values at once u can use nested if statements.
+
+For falsy values; any value that is 0, none and empty strings.
+ 
+
+
+
  
 
 
