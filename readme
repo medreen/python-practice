@@ -76,15 +76,19 @@ for the file argument, we can write the output of the print function in a separa
 i.e with open ('output.txt', 'w') as f:
 print('Hello world!', file=f)
 
+All python files have a .py extension that tells the editor that it is a pyton file.
+
 Data Types
 Python is a dynamically-typed language like JavaScript meaning you don't have to declare types for the variables.
 \*\*makes coding really fast but it can lead to unexpected bugs because type errors are detected only when a program runs.
+
+**they can be grouped into "Numeric, Textual, Boolean Data types"*
 
 1. Intergers - whole numbers
 2. Floats - decimal points
 3. Strings - characters enclosed by quotations (double or single)
 4. Booleans - A True or False type.
-5. Set - an ordered collection. {3, 4, 6}
+5. Set - an ordered collection. {3, 4, 6} (unique)
 6. List - an ordered collection that supports different data types.
 7. Dictionary - collection of key value \*_pairs_ enclosed in brackets.
 8. Tuple - an immutable ordered collection enclosed by brackets().
@@ -95,19 +99,23 @@ Python is a dynamically-typed language like JavaScript meaning you don't have to
 or isinstance() function ->> it takes an object and the type you want to check it against.
 \\then returns a boolean.
 
+
+
 STRINGS
 ===> a string is a sequence of characters surrounded by either a single or double quotation marks.
 **are like arrays with unicode characters*
 --> u can use for loops to loop characters in a string.
+--> when u use the strip() method on a string it returns a list with the individual characters
 
-
-in keyword
+IN keyword
 --> used to check for a phrase or certain character in a string 
 ('girl' in text)
+(returns a boolean) 
 
 not in
 --> used to check if a phrase/value is not in a string
 (girl not in text)
+(return a boolean value)
 
 for a multi-line string you can use triple double or single quotes.
 \*\*if ur string has either double or single quote use the opposite string to wrap the object.
@@ -116,14 +124,23 @@ or u could escape the single and double quote using a (\) backslash. **it comes 
 \*_you can only concatenate a string and not a string and a number otherwise u get a type error._
 --> this happens because python doesn't automatically convert the type
 however, u can use the string function to convert a number to a string.
+i.e str(9) #output "9"
 
 Apart from regular strings, python also has a category called f-strings that are similar to interpolation in JavaScript.
 \*\*they start with f and allow u to embed variables or expressions inside replacement fields indicated by curly braces.
+Formatted strings include: placeholder and mofifier
+--> placeholder = contains other variables, functions, modifiers, operations
+   (placeholders are defined using curly braces {})
+--> modifier = is included by adding a semicolon, followed by a legal formatting type.
+    i.e price = 59
+        txt = f"The price is {price:.2f} dollars" #fixes the number to 2d
+        print(txt)
+--> placeholders also take math operations.
 
 Indexing
 --> to get the length of a string we use the len()function
 so the index is zero-based meaning they begin from zero going on.
-Each character of a string has a position called an index.
+Each character of a string/ ordered collection has a position called an index.
 
 \*\*to access the character by it's index we use square brackets([index])
 
@@ -132,7 +149,7 @@ Each character of a string has a position called an index.
 ## String slicing
 
 to extract characters from a certain index to another.
-string[start:stop]
+string[start:stop:step]
 
 u can also add the step to specify the increment btn each index in the slice.
 
@@ -153,7 +170,7 @@ returns a left trim version of the string.
 returns a right trim version of the string.
 
 -->rfind()
-just like find() but returns the last positionof where it was found.
+just like find() but returns the last position a specified value.
 
 -->rsplit()
 similar to split()
@@ -165,13 +182,13 @@ returns a new string with all old occurrences replaced by new.
 \*\*splits a string on a given separator and if no separator is given it splits on whitespace.
 
 --> join(iterable)
-\*joins items of an iterablr into a sting with a separator.
+\*joins items of an iterable into a string with a separator.
 
 --> startswith(prefix)
 \*\*returns a boolean indicating if a string starts with the specified prefix
 
 --> endswith(prefix)
-\*opposite of startswith
+\*opposite of starts with
 
 --> find(substring)
 \*returns the index of the first occurrence of the substring
@@ -205,7 +222,7 @@ Operations you can perform with intergers.
 
 ---> more complex arithmetics.
 =<to get the remainder of two numbers>
-i. modulo operator
+i. modulus operator
 ii. exponentiation
 iii. floor division
 
@@ -220,7 +237,7 @@ Exponentiation
 (\*\*) -- returns the power of a number
 i.e when you are multiplying a number a certain number of times / raising the number to the power value
 
-we have other built in functions as wel
+we have other built in functions as well
 -int() **converts a float to an interger
 -round() **rounds off a float
 -float() \*\*converts an interger to a float
@@ -232,7 +249,7 @@ abs() --> returns the absolute value of a number.
 -oct() --> to octal
 -hex() --> to hexadecimal
 
-Augmented assignments
+Augmented assignment operators
 -combines a binary operation with an assignment in one step.
 \*\*takes a variable, applies an operation on that variable and assigns it to the same variable.
 In JavaScript, they are subtraction assignment (-=)
@@ -251,6 +268,207 @@ var += 'New York' #'hello New York'
 -exponentiation assignment
 -modulus assignment
 
+VARIABLES
+a variable is a memory location/ storage for data
+--> we assign data to variables using = 
+
+Variable naming rules
+1.Variable names can only contain letters,numbers and underscores
+ **Valid variable names**
+    -> name , number, x , y , email, phone, full_name1, number1
+**Invalid variable names**
+    -> name@ ,#number , full/name, name() ,'name'
+
+2.Variable names can only start with letters or underscores -cant start with numbers
+**valid names**
+    -> name1 , name2 , _full_name_ , _full_name1
+**Invalid names**
+    -> 1name, 23email,
+
+3.Variable names cant have spaces
+**Invalid names**
+    -> full name , phone number
+**Valid names**
+    -> full_name , fullname
+    -> phone_number , phonenumber
+
+4.Variable names are case sensitive
+ -> name , NAME, Name , NAMe -> not equal
+ -> x & X -> 2 different variables
+ x = 10
+ X = 10
+
+5.Variable names cant be Python keywords - cant use reserved words
+
+N/B:- It is good practice to give variables meaningful names
+-> name = "Jane"
+    x = "Jane"
+    email = "john@mail.com"
+
+DATA STRUCTURES
+-->Lists<---
+-An ordered and mutable collection of items of different data types
+-A container that holds more than one value - the values can be of any data type 
+-Use [] -> square brackets
+-Values in a list are comma-separated
+-when we say sth is ordered we mean that they have a defined order and that order does not change
+-when we say that they are mutable it means we can change, add, remove items in the list.
+-allow duplicate value meaning they are not unique (u can have items with the same value)
+
+
+**Properties of Lists**
+1.They are ordered - uses indexing to access/order items
+    -indexing is zero-based(starts from zero)
+2.They can store multiple items of different data types 
+  e.g items = ["Mango",1,2,3.98,False]
+3.They are mutable - values in the list can be changed
+4.Values in a list are accessed using index
+5.A list can also contain other lists -nested list
+--> we also have the list() method that converts other data structures to lists.
+
+
+**LIST METHODS**
+1.Length - no of items in a list - len()
+2.Adding items to a list
+    **append() - adds a single item at the end of a list
+    **extend() - adds multiple items at the end of a list - uses a list
+    **insert() - adds an item at a specific index -insert(index,value)
+3.Removing items from a list
+    **remove() - removes an item by value
+    **pop()
+     - if no index is specified , it removes the last item
+     -can remove an item at a specific index if index is specified
+    **clear() - empties a list - removes everything from the list
+4.type()-> to check the data type
+5.del keyword to delete either a list or an item
+
+Task
+1.count() - returns the no of occurrences of an item
+2.index() - returns the index of the first occurrence of an item
+
+  -> u can also use a range to slice multiple items by index.
+  -> negative indexing also applies
+3.sort() - by default sorts a list in ascending order
+        - it can sort a list in descending order if you pass reverse=True
+4.reverse() - reverses the order of a list - last item becomes first and vice versa
+5.max() - returns the largest value
+6.min() - returns the smallest value
+7.copy() - creates a copy of a list
+
+8.insert() - inserts an item at a specified index
+9.remove() - removes the first occurrence of the value specified.
+10.the 2 methods of joining lists
+    -extend
+    -concatenation
+
+Changing list items
+--> to change a value or item in a lsit, refer to the index number of the item and asssign it a new value.
+ i.e my_list = [2, "loleti", 90.76]
+     my_list[1] = "killian"
+
+--> to change a range of items use the index range [2:3]
+
+List comprehension
+Provide a shorter method or synatx when u want to create a new list based on the values of an existing list.
+(without looping)
+  fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+  newlist = [x for x in fruits if "a" in x]
+  print(newlist)
+
+**TUPLES**
+-A tuple is a data structure used to hold multiple values of any data type that cant be changed or removed
+-represented using ()
+
+**properties of tuples**
+1.They are ordered - uses indexing to access /order items
+2.Values in a tuple are immutable - cant be changed or removed or added ***-unique property**
+3.They can hold multiple items of different types
+
+To add values to a tuple
+1. either convert it to a list
+2. my_tuple = ('mango', 'banana', 'orange')
+   item = ('apple',)
+   my_tuple += item
+
+**Tuple unpacking**
+--> is basically assigning items in a tuple to variables
+ my_tuple = ('mango', 'banana', 'orange')
+ x, y, z = my_tuple
+ //when u print the variables: x, y, z they return the corresponding tuple value.
+ 
+
+**TASK**
+1.How to update a tuple? - adding / removing / changing items in a tuple
+---> convert tuple to a list
+---> manipulate the list
+---> convert list back to tuple
+
+
+2.Slide 38
+
+
+**SETS**
+-A collection of unique and unordered items
+-Represented using curly braces - {}
+**Properties of sets**
+1.They are unordered - no indexing
+2.Values in a set are unique - no duplicate / repeated values
+3.They are mutable - can be changed
+4.Can hold multiple items of any type
+**set operations**
+1.accessing items in a set
+    -> cant directly access items in a list
+    -> use 'in' to confirm whether value is in set
+    -> convert to a list / tuple
+2.adding items to a set
+    -> add a single item - add()
+    -> add multiple items - update() - uses a list
+3.removing items from a set
+    -> .remove()- removes an element by value
+            -> if an element to be removed isnt found/doesnt exist, it throws an error
+    -> .discard() -removes an element by value
+            -> if an element to be removed isnt found/doesnt exist,it ignores - no error
+    -> .clear() - empties the set
+
+**DICTIONARIES**
+- A collection of key-value pairs
+-Represented using curly braces - {}
+-> *key* - what we use to access values
+-> *value* - actual data being stored
+            - attached to keys - accessed using keys
+-> key-value pairs aare comma-separated
+e.g "name":"Alice",
+    "age" :30
+
+"name" -> key
+"Alice" -> value
+    **Keys**
+1.They are unique and case sensitive
+    -they follow identifier/variable naming rules
+2.Keys must be strings
+3.They are immutable
+4.They are used to access values in a dictionary
+    **Values**
+1.Can be of any data type
+2.Are accessed using keys
+
+        **DICTIONARY METHODS/OPERATIONS**
+1.Accessing values in a dictionary -> values are accessed using keys
+        -> bracket notation -> my_dict["key"]
+        -> get methods - get("key")
+2.Adding or updating entries
+    -add a new key-value pair ---> my_dict['key'] = value
+    -update multiple keys -> update({...})
+3. .keys() - returns all dictionary keys in a list
+4. .values -returns all dictionary values in a list
+5. .items() - return all key-value pairs in a list of tuples
+6.Removing items from a dictionary
+    -> .pop("key") - pass a key to remove a specific value
+    -> .popitem() - removes the last inserted item
+    -> .clear() - empties the dictionary
+
+**difference between bracket notation and get()**
+**copy && nested dictionaries"
 
 FUNCTIONS
 --> a function is lines of code that are reusable when u call them.
